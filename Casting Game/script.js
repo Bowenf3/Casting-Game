@@ -46,7 +46,7 @@ function spellFailure() {
 function cspellSuccess() {
     console.log("Spell Success");
     showSpellSuccess();
-        clearForm();
+    clearForm();
     }
 
 function clearForm() {
@@ -59,7 +59,7 @@ function showSpellSuccess() {
     document.getElementById("popup").style.opacity = 1;
     console.log("fade in");
     document.getElementById("popup").innerHTML = "Spell Success";
-    hideSpellResult();
+    setTimeout(hideSpellResult, 2000);
 }
 
 function showSpellFailure() {
@@ -68,7 +68,7 @@ function showSpellFailure() {
     document.getElementById("popup").style.opacity = 1;
     console.log("fade in");
     document.getElementById("popup").innerHTML = "Spell Failed";
-    hideSpellResult();
+    setTimeout(hideSpellResult, 2000);
     
 }
 
@@ -77,5 +77,9 @@ function hideSpellResult() {
     document.getElementById("popup").style.visibility = "hidden";
     document.getElementById("popup").style.opacity = 0;
     console.log("fade out");
+    setTimeout(clearSpellResult, 2000);
 }
-//setTimeout(function(){ alert("Hello"); }, 3000);
+
+function clearSpellResult() {
+    document.getElementById("popup").innerHTML = "";
+}
