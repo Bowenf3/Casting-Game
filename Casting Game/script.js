@@ -6,6 +6,7 @@ window.bactions = ["ball", "bolt"];
 
 
 function inputArray() {
+event.preventDefault();
 var x = document.getElementById("spellInput").value;
 window.spellInputArray = x.split(" ");
 console.log(window.spellInputArray);
@@ -37,19 +38,44 @@ function cwordThreeMatch() {
 }
 
 function spellFailure() {
-//    var popUpText =  document.createElement("h1");
-//    popUpText.innerHTML = "Spell Failed";
-document.getElementById("popup").innerHTML = "Spell Failed";
-   console.log("spellfailed")
+    console.log("spellfailed");
+    showSpellFailure();
+    clearForm();
 }
 
 function cspellSuccess() {
-    //    var popUpText =  document.createElement("h1");
-    //    popUpText.innerHTML = "Spell Failed";
-    document.getElementById("popup").innerHTML = "Spell Success";
-       console.log("Spell Success")
+    console.log("Spell Success");
+    showSpellSuccess();
+        clearForm();
     }
 
 function clearForm() {
-    document.getElementById("spellInput").innerHTML = "";
+    document.getElementById("spellInput").value = ""; //doesnt work
 }
+
+function showSpellSuccess() {
+    document.getElementById("popup").style.transition = "opacity 2s linear";
+    document.getElementById("popup").style.visibility = "visible";
+    document.getElementById("popup").style.opacity = 1;
+    console.log("fade in");
+    document.getElementById("popup").innerHTML = "Spell Success";
+    hideSpellResult();
+}
+
+function showSpellFailure() {
+    document.getElementById("popup").style.transition = "opacity 2s linear";
+    document.getElementById("popup").style.visibility = "visible";
+    document.getElementById("popup").style.opacity = 1;
+    console.log("fade in");
+    document.getElementById("popup").innerHTML = "Spell Failed";
+    hideSpellResult();
+    
+}
+
+function hideSpellResult() {
+    document.getElementById("popup").style.transition = "visibility 0s 2s, opacity 2s linear";
+    document.getElementById("popup").style.visibility = "hidden";
+    document.getElementById("popup").style.opacity = 0;
+    console.log("fade out");
+}
+//setTimeout(function(){ alert("Hello"); }, 3000);
