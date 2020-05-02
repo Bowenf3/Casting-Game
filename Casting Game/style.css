@@ -1,2 +1,36 @@
-/*empty*/
- 
+/*for editing
+* {
+border: 1px solid red !important;
+}
+*/
+
+body{
+    width:100%;
+}
+#popup {
+    margin-top: 30%;
+    margin-left:43%;
+    margin-bottom: 2%;
+    height: 4rem;
+    width: auto;
+    display: block;
+    font-size: 3rem;
+    
+}
+
+.casting {
+  font-size: 5rem;
+  margin-left:45%;
+  width: 100%;
+  display: block;
+}
+
+.inputform {
+    margin-bottom: 2%;
+    margin-left:43%;
+    width: 23rem;
+    height: 5rem;
+    font-size: 4rem;
+    display: block;
+}
+
